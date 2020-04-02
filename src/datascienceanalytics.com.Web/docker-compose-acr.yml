@@ -1,0 +1,34 @@
+﻿apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: dsnacorp-www-mvc-deployment
+spec:
+  replicas: 1
+  minReadySeconds: 10 
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: dsnacorp-www-mvc
+    spec:
+      containers:
+      - name: dsnacorp-www-mvc
+        image: soonieacr.azurecr.io/dsnacorp-www-mvc:v1
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dsnacorp-www-mvc-service
+spec:
+  type: ClusterIP
+  ports:
+  - name:
+    port: 80
+  selector:
+    app: dsnacorp-www-mvc

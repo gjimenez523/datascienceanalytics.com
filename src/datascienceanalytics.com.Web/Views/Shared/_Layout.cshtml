@@ -1,0 +1,304 @@
+﻿@using System.Globalization
+@using System.Threading
+@using System.Threading.Tasks
+@using Abp.Timing
+@using datascienceanalytics.com.Web.Views.Shared.Components.LanguageSelection
+@using datascienceanalytics.com.Web.Views.Shared.Components.TopMenu
+@using Abp.Web.Security.AntiForgery
+@inject IAbpAntiForgeryManager AbpAntiForgeryManager
+@{
+    AbpAntiForgeryManager.SetCookie(Context);
+}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <title>DS&amp;A</title>
+    <!-- Global styles -->
+    @*<environment names="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap-paper/bootstrap.css" />
+            <link rel="stylesheet" href="~/lib/toastr/toastr.css" />
+            <link rel="stylesheet" href="~/lib/sweetalert/dist/sweetalert.css" />
+            <link rel="stylesheet" href="~/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css" />
+            <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+            <link rel="shortcut icon" href="images/favicon.png">
+            <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+            <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+            <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        </environment>
+
+        <environment names="Staging,Production">
+            <link rel="stylesheet" href="~/view-resources/Views/_Bundles/layout-libs.min.css" asp-append-version="true" />
+        </environment>*@
+    <!-- animation -->
+    <link rel="stylesheet" href="~/lib/pofo/animate.css" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="~/lib/pofo/bootstrap.min.css" />
+    <!-- et line icon -->
+    <link rel="stylesheet" href="~/lib/pofo/et-line-icons.css" />
+    <!-- font-awesome icon -->
+    <link rel="stylesheet" href="~/lib/pofo/font-awesome.min.css" />
+    <!-- themify icon -->
+    <link rel="stylesheet" href="~/lib/pofo/themify-icons.css">
+    <!-- swiper carousel -->
+    <link rel="stylesheet" href="~/lib/pofo/swiper.min.css">
+    <!-- justified gallery  -->
+    <link rel="stylesheet" href="~/lib/pofo/justified-gallery.min.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="~/lib/pofo/magnific-popup.css" />
+    <!-- revolution slider -->
+    <link rel="stylesheet" type="text/css" href="~/lib/pofo/revolution/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/lib/pofo/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/pofo/revolution/css/navigation.css">
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="~/lib/pofo/bootsnav.css">
+    <!-- style -->
+    <link rel="stylesheet" href="~/lib/pofo/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/lib/pofo/responsive.css" />
+    @*<link rel="stylesheet" href="~/css/main.css" />*@
+
+
+    <!-- View specific styles -->
+    @RenderSection("styles", required: false)
+    @*<script type="text/javascript">
+            //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+            var abp = abp || {}; abp.appPath = '@ApplicationPath';
+        </script>*@
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    @*<!--[if lt IE 9]>
+            <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
+            <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
+        <![endif]-->*@
+    @*@Scripts.Render("~/Bundles/vendor/js/top")*@
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="~/"><i class="fa fa-cubes"></i> com</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        @await Component.InvokeAsync(typeof(TopMenuViewComponent), new { activeMenu = ViewBag.ActiveMenu })
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        @await Component.InvokeAsync(typeof(LanguageSelectionViewComponent))
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+
+    <!-- start header -->
+    <header>
+        <!-- start navigation -->
+        <nav class="navbar navbar-default bootsnav navbar-fixed-top header-dark white-link bg-transparent">
+            <div class="container-fluid padding-thirteen-lr md-padding-eight-lr sm-padding-15px-lr nav-header-container">
+                <div class="row">
+                    <div class="col-md-2 col-xs-5">
+                        <a href="index.html" title="DSNA" class="logo">
+                            <img src="images/logo.png" data-at2x="images/logo@2x.png" class="logo-dark" alt="Pofo" style="max-height:56px;">
+                            <img src="/images/logo_DSNACorp.png" data-at2x="/images/logo_DSNACorp.png" alt="DSNA" class="logo-light default" style="max-height:56px;">
+                        </a>
+                    </div>
+                    <div class="col-md-7 col-xs-2 width-auto pull-right accordion-menu xs-no-padding-right">
+                        <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#navbar-collapse-toggle-1">
+                            <span class="sr-only">toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-collapse collapse pull-right" id="navbar-collapse-toggle-1">
+                            <ul id="accordion" class="nav navbar-nav navbar-left no-margin alt-font text-normal" data-in="fadeIn" data-out="fadeOut">
+                                <!-- start menu item -->
+                                <li class="dropdown megamenu-fw">
+                                    <a href="http://dsnacorp.com">Home</a><i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                                </li>
+                                <!-- end menu item -->
+                                <li class="dropdown simple-dropdown">
+                                    <a href="/Blog" title="Blog">Blog</a><i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                                </li>
+                                <li class="dropdown megamenu-fw">
+                                    <a href="javascript:void(0);">Survey</a><i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                                </li>
+                                <li class="dropdown simple-dropdown">
+                                    <a href="/Home/Contact" title="Contact Us">Contact Us</a><i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                                </li>
+                                <li class="dropdown megamenu-fw">
+                                    <a href="https://soonie-web.azurewebsites.net/Account/Login?tenantName=DSNA">Login</a><i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    @*
+                        <div class="col-md-2 col-xs-5 width-auto">
+                            <div class="header-searchbar">
+                                <a href="#search-header" class="header-search-form text-white"><i class="fa fa-search search-button"></i></a>
+                                <!-- search input-->
+                                <form id="search-header" method="post" action="search-result.html" name="search-header" class="mfp-hide search-form-result">
+                                    <div class="search-form position-relative">
+                                        <button type="submit" class="fa fa-search close-search search-button"></button>
+                                        <input type="text" name="search" class="search-input" placeholder="Enter your keywords..." autocomplete="off">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    *@
+                </div>
+            </div>
+        </nav>
+        <!-- end navigation -->
+    </header>
+    <!-- end header -->
+
+    @RenderBody()
+
+    <!-- start footer -->
+    <footer class="footer-strip-dark bg-black padding-50px-tb xs-padding-30px-tb">
+        <div class="container">
+            <div class="row equalize xs-equalize-auto">
+                <!-- start logo -->
+                <div class="col-md-3 col-sm-3 col-xs-12 display-table sm-text-center xs-margin-20px-bottom">
+                    <div class="display-table-cell vertical-align-middle">
+                        <a href="index.html"><img class="footer-logo" src="/images/logo_DSNACorp.png" data-at2x="/images/logo_DSNACorp.png" alt="DSNA"></a>
+                    </div>
+                </div>
+                <!-- end logo -->
+                <!-- start copyright -->
+                <div class="col-md-6 col-sm-6 col-xs-12 text-center text-small alt-font display-table xs-margin-10px-bottom">
+                    <div class="display-table-cell vertical-align-middle">
+                        © 2018 Data Science &Aacute; Analytics LLC. All rights reserved.
+                    </div>
+                </div>
+                <!-- end copyright -->
+                <!-- start social media -->
+                <div class="col-md-3 col-sm-3 col-xs-12 display-table text-right sm-text-center">
+                    <div class="display-table-cell vertical-align-middle">
+                        <div class="social-icon-style-8 display-inline-block vertical-align-middle">
+                            @*<ul class="small-icon no-margin-bottom">
+                                    <li><a class="facebook text-white" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a class="twitter text-white" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="google text-white" href="https://plus.google.com" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a class="instagram text-white" href="https://instagram.com/" target="_blank"><i class="fa fa-instagram no-margin-right" aria-hidden="true"></i></a></li>
+                                </ul>*@
+                        </div>
+                    </div>
+                </div>
+                <!-- end social media -->
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
+    <!-- end scroll to top  -->
+    <!-- Global scripts -->
+    @*<environment names="Development">
+            <script src="~/lib/json2/json2.js"></script>
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/lib/moment/min/moment-with-locales.js"></script>
+            <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+            <script src="~/lib/blockUI/jquery.blockUI.js"></script>
+            <script src="~/lib/toastr/toastr.js"></script>
+            <script src="~/lib/sweetalert/dist/sweetalert-dev.js"></script>
+            <script src="~/lib/spin.js/spin.js"></script>
+            <script src="~/lib/spin.js/jquery.spin.js"></script>
+            <script src="~/lib/abp-web-resources/Abp/Framework/scripts/abp.js"></script>
+            <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js"></script>
+            <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js"></script>
+            <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js"></script>
+            <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js"></script>
+            <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js"></script>
+        </environment>
+        <environment names="Staging,Production">
+            <script src="~/view-resources/Views/_Bundles/layout-libs.min.js" asp-append-version="true"></script>
+        </environment>*@
+
+    <script type="text/javascript" src="~/lib/pofo/js/jquery.js"></script>
+    <script type="text/javascript" src="~/lib/pofo/js/modernizr.js"></script>
+    <script type="text/javascript" src="~/lib/pofo/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/lib/pofo/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="~/lib/pofo/js/skrollr.min.js"></script>
+    <script type="text/javascript" src="~/lib/pofo/js/smooth-scroll.js"></script>
+    <script type="text/javascript" src="~/lib/pofo/js/jquery.appear.js"></script>
+    <!-- menu navigation -->
+    <script type="text/javascript" src="~/lib/pofo/js/bootsnav.js"></script>
+    <script type="text/javascript" src="~/lib/pofo/js/jquery.nav.js"></script>
+    <!-- animation -->
+    <script type="text/javascript" src="~/lib/pofo/js/wow.min.js"></script>
+    <!-- page scroll -->
+    <script type="text/javascript" src="~/lib/pofo/js/page-scroll.js"></script>
+    <!-- swiper carousel -->
+    <script type="text/javascript" src="~/lib/pofo/js/swiper.min.js"></script>
+    <!-- counter -->
+    <script type="text/javascript" src="~/lib/pofo/js/jquery.count-to.js"></script>
+    <!-- parallax -->
+    <script type="text/javascript" src="~/lib/pofo/js/jquery.stellar.js"></script>
+    <!-- magnific popup -->
+    <script type="text/javascript" src="~/lib/pofo/js/jquery.magnific-popup.min.js"></script>
+    <!-- portfolio with shorting tab -->
+    <script type="text/javascript" src="~/lib/pofo/js/isotope.pkgd.min.js"></script>
+    <!-- images loaded -->
+    <script type="text/javascript" src="~/lib/pofo/js/imagesloaded.pkgd.min.js"></script>
+    <!-- pull menu -->
+    <script type="text/javascript" src="~/lib/pofo/js/classie.js"></script>
+    <script type="text/javascript" src="~/lib/pofo/js/hamburger-menu.js"></script>
+    <!-- counter  -->
+    <script type="text/javascript" src="~/lib/pofo/js/counter.js"></script>
+    <!-- fit video  -->
+    <script type="text/javascript" src="~/lib/pofo/js/jquery.fitvids.js"></script>
+    <!-- equalize -->
+    <script type="text/javascript" src="~/lib/pofo/js/equalize.min.js"></script>
+    <!-- skill bars  -->
+    <script type="text/javascript" src="~/lib/pofo/js/skill.bars.jquery.js"></script>
+    <!-- justified gallery  -->
+    <script type="text/javascript" src="~/lib/pofo/js/justified-gallery.min.js"></script>
+    <!--pie chart-->
+    <script type="text/javascript" src="~/lib/pofo/js/jquery.easypiechart.min.js"></script>
+    <!-- instagram -->
+    <script type="text/javascript" src="~/lib/pofo/js/instafeed.min.js"></script>
+    <!-- retina -->
+    <script type="text/javascript" src="~/lib/pofo/js/retina.min.js"></script>
+    <!-- revolution -->
+    <script type="text/javascript" src="~/lib/pofo/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="~/lib/pofo/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+    <script src="~/lib/soonie.js/communication-aide/_CommunicationAide.js"></script>
+
+    <script>
+        abp.localization.defaultSourceName = '@LocalizationSourceName';
+        if (moment) { //Localizing momentjs
+            moment.locale('@CultureInfo.CurrentUICulture.Name');
+        }
+    </script>
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+    <!-- View specific scripts -->
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript" src="~/lib/pofo/js/main.js"></script>
+
+    <!--Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115037587-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115037587-1');
+    </script>
+</body>
+</html>

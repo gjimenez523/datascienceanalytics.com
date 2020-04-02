@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  datascienceanalytics.com.web:
+    image: ${DOCKER_REGISTRY}datascienceanalyticscomweb
+    build:
+      context: .
+      dockerfile: src/datascienceanalytics.com.Web/Dockerfile

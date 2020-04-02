@@ -1,0 +1,220 @@
+﻿@using datascienceanalytics.com.Web.Startup
+@{
+    ViewBag.ActiveMenu = PageNames.Home;
+}
+@section scripts
+    {
+    <environment names="Development">
+        <script src="~/js/views/blog/index.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/views/blog/index.min.js"></script>
+    </environment>
+}
+
+<style>
+    .aside-title:after {
+        background: #6512bb;
+    }
+
+    .bg-deep-pink {
+        background-color: #6512bb;
+    }
+    header nav.navbar-default, nav.navbar.bootsnav{
+        background-color:black;
+    }
+    a:hover, a:active {
+        color: #d6bf5f;
+    }
+
+</style>
+<section>
+    <div class="container">
+        <div class="row">
+            <main class="col-md-9 col-sm-12 col-xs-12 right-sidebar sm-margin-60px-bottom xs-margin-40px-bottom no-padding-left sm-no-padding-right">
+                <!-- start post item -->
+                <div class="col-md-12 col-sm-12 col-xs-12 blog-details-text last-paragraph-no-margin">
+                    <img src="~/images/blog-details-img19.jpg" alt="" class="width-100 margin-45px-bottom" data-no-retina="">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <strong class="text-extra-dark-gray">Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more <u>recently with desktop publishing</u> software like aldus pagemaker including versions.</p>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the <strong class="text-extra-dark-gray">first true generator on the internet.</strong> It uses a dictionary of over 200 Latin words, combined with a <u>handful of model sentence structures,</u> to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour.</p>
+                    <blockquote class="border-color-deep-pink">
+                        <p>Reading is not only informed by what’s going on with us at that moment, but also governed by how our eyes and brains work to process information. What you see and what you’re experiencing as you read these words is quite different.</p>
+                        <footer>Jason Maria</footer>
+                    </blockquote>
+                    <img src="images/blog-details-img20.jpg" alt="" class="width-100 margin-45px-bottom" data-no-retina="">
+                    <!-- dropcaps -->
+                    <p><span class="first-letter first-letter-block bg-extra-dark-gray text-white">M</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries. Simply dummy text of the printing and typesetting industry. It has survived not only five centuries. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <!-- end dropcaps -->
+                    <figure class="wp-caption alignleft"><img alt="" src="images/blog-details-img21.jpg" data-no-retina=""><figcaption class="wp-caption-text">There is no sincerer love than the love of food.</figcaption></figure>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour.</p>
+                    <span class="text-extra-dark-gray font-weight-500 margin-15px-bottom display-block text-medium">You can never quit. Winners never quit, and quitters never win</span>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour.</p>
+                </div>
+                <!-- end post item -->
+
+                <div class="col-md-12 col-sm-12 col-xs-12 margin-seven-bottom margin-eight-top">
+                    <div class="divider-full bg-medium-light-gray"></div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 sm-text-center">
+                    <div class="tag-cloud margin-20px-bottom">
+                        <a href="blog-grid.html">Technology</a>
+                        <a href="blog-grid.html">Architect</a>
+                        <a href="blog-grid.html">Blog</a>
+                        <a href="blog-grid.html">Test</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 text-right sm-text-center">
+                    <div class="social-icon-style-6">
+                        <ul class="extra-small-icon">
+                            <li><a class="likes-count" href="#" target="_blank"><i class="fas fa-heart text-deep-pink"></i><span class="text-small">0</span></a></li>
+                            @*<li><a class="facebook" href="http://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a class="twitter" href="http://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a class="google" href="http://google.com" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a class="pinterest" href="http://dribbble.com" target="_blank"><i class="fab fa-pinterest-p"></i></a></li>*@
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 margin-30px-top">
+                    <div class="display-table width-100 border-all border-color-extra-light-gray padding-50px-all sm-padding-30px-all xs-padding-20px-all">
+                        <div class="display-table-cell width-130px text-center vertical-align-top xs-margin-15px-bottom xs-width-100 xs-display-block xs-text-center">
+                            <img src="~/images/0.jpeg" class="img-circle width-100px" alt="" data-no-retina="">
+                        </div>
+                        <div class="padding-40px-left display-table-cell vertical-align-top last-paragraph-no-margin xs-no-padding-left xs-display-block xs-text-center">
+                            <a href="#" class="text-extra-dark-gray text-uppercase alt-font font-weight-600 margin-10px-bottom display-inline-block text-small">Gabriel Jimenez</a>
+                            <p>Software Architect, sooNiE LLC</p>
+                            <a class="btn btn-very-small btn-black margin-20px-top">All author posts</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <aside class="col-md-3 col-sm-12 col-xs-12 pull-right">
+                @*<div class="display-inline-block width-100 margin-45px-bottom xs-margin-25px-bottom">
+                    <form>
+                        <div class="position-relative">
+                            <input type="email" class="bg-transparent text-small no-margin border-color-extra-light-gray medium-input pull-left" placeholder="Enter your keywords...">
+                            <button type="submit" class="bg-transparent  btn position-absolute right-0 top-1"><i class="fa fa-search no-margin-left"></i></button>
+                        </div>
+                    </form>
+                </div>*@
+                <div class="margin-45px-bottom xs-margin-25px-bottom">
+                    <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase text-small font-weight-600 aside-title"><span>About Us</span></div>
+                    <a href="about-me.html"><img src="images/aside-image-1.jpg" alt="" class="margin-25px-bottom" data-no-retina=""></a>
+                    <p class="margin-20px-bottom text-small">
+                        Data Science and Analytics (DS&A) Corporation, LLC is a data science and analytics applied research, consulting, and training firm. Our primary goal in all engagements with our clients is to systematically discover actionable insights within their respective data through the rigorous application of our trademarked “Extract | Analyze | Synthesize | Visualize | Predict” EASVP(™) process in order to effectively and efficiently assist the client in executing value-added tactical and strategic business decisions.
+                    </p>
+                    @*<a class="btn btn-very-small btn-dark-gray text-uppercase" href="about-me.html">About Author</a>*@
+                </div>
+                <div class="margin-50px-bottom">
+                    <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Follow Us</span></div>
+                    <div class="social-icon-style-1 text-center">
+                        <ul class="extra-small-icon">
+                            <li><a class="facebook" href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            @*<li><a class="google" href="http://google.com" target="_blank"><i class="fa fa-google"></i></a></li>
+                            <li><a class="dribbble" href="http://dribbble.com" target="_blank"><i class="fa fa-dribbble"></i></a></li>*@
+                            <li><a class="linkedin" href="http://linkedin.com" target="_blank"><i class="fa fa-linkedin "></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="margin-45px-bottom xs-margin-25px-bottom">
+                    <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Categories</span></div>
+                    @*<ul class="list-style-6 margin-50px-bottom text-small">
+                        <li><a href="blog-masonry.html">Arts and Entertainment</a><span>12</span></li>
+                        <li><a href="blog-masonry.html">Blog</a><span>05</span></li>
+                        <li><a href="blog-masonry.html">Blog Full width</a><span>08</span></li>
+                        <li><a href="blog-masonry.html">Blog Grid</a><span>10</span></li>
+                        <li><a href="blog-masonry.html">Branding</a><span>21</span></li>
+                        <li><a href="blog-masonry.html">Design Tutorials</a><span>09</span></li>
+                        <li><a href="blog-masonry.html">Designing</a><span>07</span></li>
+                        <li><a href="blog-masonry.html">Feature</a><span>06</span></li>
+                        <li><a href="blog-masonry.html">Home Blog</a><span>10</span></li>
+                        <li><a href="blog-masonry.html">Onepage Fashion</a><span>11</span></li>
+                        <li><a href="blog-masonry.html">Sample</a><span>06</span></li>
+                    </ul>*@
+                </div>
+                <div class="bg-deep-pink padding-30px-all text-white text-center margin-45px-bottom xs-margin-25px-bottom">
+                    <i class="fa fa-quote-left icon-small margin-15px-bottom display-block"></i>
+                    <span class="text-extra-large font-weight-300 margin-20px-bottom display-block">We discovery actionable insights within your data.</span>
+                    @*<a class="btn btn-very-small btn-transparent-white border-width-1 text-uppercase" href="portfolio-boxed-grid-overlay.html">Explore Portfolio</a>*@
+                </div>
+                <div class="margin-45px-bottom xs-margin-25px-bottom">
+                    <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Popular post</span></div>
+                    @*<ul class="latest-post position-relative">
+                        <li>
+                            <figure>
+                                <a href="blog-masonry.html"><img src="images/aside-image-2.jpg" alt="" data-no-retina=""></a>
+                            </figure>
+                            <div class="display-table-cell vertical-align-top text-small"><a href="blog-masonry.html" class="text-extra-dark-gray"><span class="display-inline-block margin-5px-bottom">Traveling abroad will change you forever</span></a> <span class="clearfix text-medium-gray text-small">April 30, 2016</span></div>
+                        </li>
+                        <li>
+                            <figure>
+                                <a href="blog-masonry.html"><img src="images/aside-image-3.jpg" alt="" data-no-retina=""></a>
+                            </figure>
+                            <div class="display-table-cell vertical-align-top text-small"><a href="blog-masonry.html" class="text-extra-dark-gray"><span class="display-inline-block margin-5px-bottom">Having a new perspec-tive on new york city</span></a> <span class="clearfix text-medium-gray text-small">March 10, 2016</span></div>
+                        </li>
+                        <li>
+                            <figure>
+                                <a href="blog-masonry.html"><img src="images/aside-image-4.jpg" alt="" data-no-retina=""></a>
+                            </figure>
+                            <div class="display-table-cell vertical-align-top text-small"><a href="blog-masonry.html" class="text-extra-dark-gray"><span class="display-inline-block margin-5px-bottom">The incredible talents of street performers</span></a> <span class="clearfix text-medium-gray text-small">March 05, 2016</span></div>
+                        </li>
+                        <li>
+                            <figure>
+                                <a href="blog-masonry.html"><img src="images/aside-image-5.jpg" alt="" data-no-retina=""></a>
+                            </figure>
+                            <div class="display-table-cell vertical-align-top text-small"><a href="blog-masonry.html" class="text-extra-dark-gray"><span class="display-inline-block margin-5px-bottom">Praesent placerat risus quis eros</span></a> <span class="clearfix text-medium-gray text-small">March  01, 2016</span></div>
+                        </li>
+                    </ul>*@
+                </div>
+                <div class="margin-45px-bottom xs-margin-25px-bottom">
+                    <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>tags cloud</span></div>
+                    @*<div class="tag-cloud">
+                        <a href="blog-grid.html">ADVERTISEMENT</a>
+                        <a href="blog-grid.html">ARTISTRY</a>
+                        <a href="blog-grid.html">BLOG</a>
+                        <a href="blog-grid.html">CONCEPTUAL</a>
+                        <a href="blog-grid.html">DESIGN</a>
+                        <a href="blog-grid.html">FASHION</a>
+                        <a href="blog-grid.html">INSPIRATION</a>
+                        <a href="blog-grid.html">SMART</a>
+                        <a href="blog-grid.html">QUOTES</a>
+                        <a href="blog-grid.html">UNIQUE</a>
+                        <a href="blog-grid.html">CONCEPTS</a>
+                    </div>*@
+                </div>
+                <div class="margin-45px-bottom xs-margin-25px-bottom">
+                    <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Archive</span></div>
+                    @*<ul class="list-style-6 margin-20px-bottom text-small">
+                        <li><a href="blog-grid.html">July 2017</a><span>12</span></li>
+                        <li><a href="blog-grid.html">June 2017</a><span>05</span></li>
+                        <li><a href="blog-grid.html">May 2017</a><span>08</span></li>
+                        <li><a href="blog-grid.html">April 2017</a><span>10</span></li>
+                        <li><a href="blog-grid.html">March 2017</a><span>21</span></li>
+                        <li><a href="blog-grid.html">February 2017</a><span>09</span></li>
+                        <li><a href="blog-grid.html">January 2017</a><span>07</span></li>
+                    </ul>*@
+                </div>
+                @*<div class="margin-45px-bottom xs-margin-25px-bottom">
+                    <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Newsletter</span></div>
+                    <div class="display-inline-block width-100">
+                        <form>
+                            <div class="position-relative">
+                                <input type="email" class="bg-transparent text-small no-margin border-color-extra-light-gray medium-input pull-left" placeholder="Enter your email...">
+                                <button type="submit" class="bg-transparent text-large btn position-absolute right-0 top-3"><i class="fa fa-envelope-o no-margin-left"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>*@
+                <div>
+                    <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Instagram</span></div>
+                    @*<div class="instagram-follow-api">
+                        <ul id="instaFeed-aside"><li><figure><a href="https://www.instagram.com/p/BYXli23FAYf/" target="_blank"><img src="//scontent.cdninstagram.com/vp/d53d800d79e01c93327a4b42833c15e9/5B7478DB/t51.2885-15/e35/21107247_830304240480187_1609163596854460416_n.jpg" class="insta-image"><span class="insta-counts"><i class="ti-heart"></i>6</span></a></figure></li><li><figure><a href="https://www.instagram.com/p/BYXTqRVFVvf/" target="_blank"><img src="//scontent.cdninstagram.com/vp/8ab91aa9b2ee8dfd09debae0bc626b22/5B52B5C7/t51.2885-15/e35/21107400_290434371364874_7048769995412602880_n.jpg" class="insta-image"><span class="insta-counts"><i class="ti-heart"></i>9</span></a></figure></li><li><figure><a href="https://www.instagram.com/p/BYXTTC8Fa9c/" target="_blank"><img src="//scontent.cdninstagram.com/vp/3d3314db2ee02ad59ee8a1905ab849dc/5B60336B/t51.2885-15/e35/21148951_160453147839973_3280447062352592896_n.jpg" class="insta-image"><span class="insta-counts"><i class="ti-heart"></i>8</span></a></figure></li><li><figure><a href="https://www.instagram.com/p/BYXSHUklKfJ/" target="_blank"><img src="//scontent.cdninstagram.com/vp/f8f452fcecb125c92c1b3be181ce9217/5B66411D/t51.2885-15/e35/21149514_114368955891501_6103739545180700672_n.jpg" class="insta-image"><span class="insta-counts"><i class="ti-heart"></i>5</span></a></figure></li><li><figure><a href="https://www.instagram.com/p/BYXSF5HlR5E/" target="_blank"><img src="//scontent.cdninstagram.com/vp/2c6bcf0a9c8f2fefc8a5e8eae81f2a33/5B6A45F6/t51.2885-15/e35/21042807_1887645504829256_2977655845124308992_n.jpg" class="insta-image"><span class="insta-counts"><i class="ti-heart"></i>3</span></a></figure></li><li><figure><a href="https://www.instagram.com/p/BYXSDLxlWq6/" target="_blank"><img src="//scontent.cdninstagram.com/vp/b827c0b4b59f0364ec32e6030353ce68/5B5BF1C3/t51.2885-15/e35/21107646_290453618102000_3513542797296664576_n.jpg" class="insta-image"><span class="insta-counts"><i class="ti-heart"></i>6</span></a></figure></li></ul>
+                    </div>*@
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
